@@ -1,0 +1,32 @@
+:root {
+    --black: #141414;
+    --gray-dark: #252525;
+    --gray: #3b3b3b;
+    --white: #fff;
+    --primary: #55e69d;
+    --primary-light: #94ffca;
+}
+
+
+
+/* Fonts */
+@font-face {
+    font-family: 'Campton Book';
+    src: url('assets/fonts/campton/CamptonBook.otf') format('woff');
+    
+}
+
+
+/* Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Campton Book', sans-serif;
+}
+
+body {
+    background-color: var(--black) !important;
+    color: var(--white);
+    overflow-x: hidden;
+}

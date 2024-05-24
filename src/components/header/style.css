@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    background-color: var(--primary);
+    height: 5rem;
+    padding: 0 20rem;
+    border-bottom: 0.1rem solid var(--primary-light);
+}
+
+header .title {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.1s;
+}
+
+header .title:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+header .title span {
+    margin-left: 0.5rem;
+}
+
+header .nav {
+    display: flex;
+    list-style-type: none;
+    color: var(--black);
+}
+
+header .nav .pipe {
+    margin: 0 0.5rem;
+}
+
+header .nav li {
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+header .nav li:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    padding: 0 1rem;
+}

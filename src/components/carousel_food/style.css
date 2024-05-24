@@ -1,0 +1,22 @@
+.carousel-food {
+    width: 100%;
+}
+
+.item-carousel-food {
+    padding: 0 1rem;
+}
+
+.item-carousel-food img {
+    width: 100%;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+}
+
+.item-carousel-details-food {
+    background-color:var(--gray-dark);
+    width: 100%;
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    padding: 1em;
+    color: var(--white);
+}
