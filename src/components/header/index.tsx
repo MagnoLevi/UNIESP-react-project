@@ -5,15 +5,21 @@ import { TiHome } from 'react-icons/ti';
 const Header = () => {
     return (
         <header>
-            <Link to="/" className='title'>
+            <div className='title'>
                 <TiHome />
-                <span>Ideal Meal</span>
-            </Link>
+                <span>Poke Search</span>
+            </div>
 
             <ul className='nav'>
-                <li> Pesquisa </li>
+                <Link to="/" className='nav-link'>
+                    Home
+                </Link>
+                
                 <span className='pipe'>|</span>
-                <li> Segunda Aba </li>
+
+                <Link to="/" className='nav-link'>
+                    Pesquisa
+                </Link>
             </ul>
         </header>
     )

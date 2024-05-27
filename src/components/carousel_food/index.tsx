@@ -3,20 +3,28 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function CarouselFood() {
     return (
-        <Carousel className="carousel-food">
-            <Carousel.Item interval={99999} className="item-carousel-food">
-                <img src="/src/assets/images/teste1.jpg" alt="" />
-
-                <div className="item-carousel-details-food">
-                    <h2>Teste</h2>
+        <Carousel className="carousel-custom">
+            <Carousel.Item interval={99999}  className="carousel-item-outside-custom">
+                <div className="carousel-item-custom">
+                    <div className="carousel-item-img">
+                        <img src="/src/assets/images/pikachu.png" alt="" />
+                    </div>
+                    
+                    <div className="carousel-item-details">
+                        <h2>Pokemon</h2>
+                    </div>
                 </div>
             </Carousel.Item>
 
-            <Carousel.Item interval={99999} className="item-carousel-food">
-                <img src="/src/assets/images/teste1.jpg" alt="" />
-
-                <div className="item-carousel-details-food">
-                    <h2>Teste 2</h2>
+            <Carousel.Item interval={99999}>
+                <div className="carousel-item-custom">
+                    <div className="carousel-item-img">
+                        <img src="/src/assets/images/pikachu.png" alt="" />
+                    </div>
+                    
+                    <div className="carousel-item-details">
+                        <h2>Pokemon</h2>
+                    </div>
                 </div>
             </Carousel.Item>
         </Carousel>

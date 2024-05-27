@@ -1,27 +1,36 @@
-.carousel-food {
+.carousel-custom {
     width: 100%;
     transition: all 0.2s linear;
 }
 
-.item-carousel-food {
-    padding: 0 1rem;
+.carousel-item-custom {
+    background-color: var(--black);
+    padding: 0.75rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
 }
 
-.item-carousel-food:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.carousel-item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.item-carousel-food img {
-    width: 100%;
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
-}
-
-.item-carousel-details-food {
-    background-color:var(--primary);
-    width: 100%;
-    border-bottom-left-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
-    padding: 1em;
+.carousel-item-details {
+    background-color: var(--white);
     color: var(--black);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    padding: 1.2rem 0;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item-details h2 {
+    margin: 0;
 }

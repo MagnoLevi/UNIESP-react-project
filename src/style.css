@@ -1,12 +1,12 @@
 :root {
-    --black: #1a1c1c;
-    --gray-dark: #222525;
-    --gray: #2c3030;
-    --gray-light: #4e5555;
-    --gray-lightest: #687171;
+    --black: #2b2b2b;
+    --gray-dark: #c2c2c2;
+    --gray: #e0e0e0;
+    --gray-light: #eeeeee;
     --white: #fff;
-    --primary: #55e69d;
-    --primary-light: #94ffca;
+    --primary: #ec423a;
+    --primary-light: #e78c87;
+    --primary-high-contrast: #ff2a1f;
 }
 
 
@@ -15,7 +15,12 @@
 @font-face {
     font-family: 'Campton Book';
     src: url('assets/fonts/campton/CamptonBook.otf') format('woff');
-    
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Campton SemiBold';
+    src: url('assets/fonts/campton/CamptonSemiBold.otf') format('woff');
 }
 
 
@@ -28,7 +33,12 @@
 }
 
 body {
-    background-color: var(--black) !important;
+    background-color: var(--gray-light) !important;
     color: var(--white);
     overflow-x: hidden;
+}
+
+.title-name {
+    color: var(--primary-high-contrast);
+    
 }

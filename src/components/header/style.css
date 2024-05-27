@@ -3,28 +3,20 @@ header {
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    background-color: var(--black);
+    background-color: var(--white);
     height: 5rem;
     top: 0;
     padding: 0 20rem;
     z-index: 99;
-    box-shadow: 0 4px 8px 0 rgba(26, 26, 28, 0.2), 0 6px 26px 0 rgba(26, 26, 28, 0.19);
-    color: var(--white);
+    box-shadow: 0 4px 8px 0 rgba(77, 77, 77, 0.07), 0 6px 26px 0 rgba(77, 77, 77, 0.06);
 }
 
 header .title {
     display: flex;
     align-items: center;
-    cursor: pointer;
-    text-decoration: none;
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--black);
     transition: all 0.1s;
-}
-
-header .title:hover {
-    text-decoration: underline;
-    transform: scale(1.1);
 }
 
 header .title span {
@@ -33,6 +25,7 @@ header .title span {
 
 header .nav {
     display: flex;
+    align-items: center;
     list-style-type: none;
 }
 
@@ -40,15 +33,18 @@ header .nav .pipe {
     margin: 0 0.5rem;
 }
 
-header .nav li {
+header .nav .nav-link {
+    color: var(--black);
+    text-decoration: none;
     display: flex;
     align-items: center;
     letter-spacing: 0.05rem;
     cursor: pointer;
     transition: all 0.1s;
+    padding: 0;
 }
 
-header .nav li:hover {
+header .nav .nav-link:hover {
     text-decoration: underline;
     transform: scale(1.1);
     padding: 0 1rem;

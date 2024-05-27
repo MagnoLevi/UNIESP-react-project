@@ -3,7 +3,11 @@ footer {
     align-items: center;
     justify-content: space-between;
     margin-top: 5rem;
-    background-color: var(--gray-dark);
-    color: var(--gray-lightest);
-    padding: 1rem 2rem;
+    background-color: var(--black);
+    color: var(--gray-dark);
+    padding: 1.5rem 2rem;
+}
+
+footer h6 {
+    margin: 0;
 }

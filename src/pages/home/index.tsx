@@ -1,89 +1,80 @@
 import "./style.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CarouselFood from "../../components/carousel_food/index";
-import { PiChefHat } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CgPokemon } from "react-icons/cg";
 
 const Home = () => {
-    const [categories, setCategories] = useState<any>();
-    const getCategories = () => {
-        // setCategories(`isso é um teste`);
+    const [regions, setRegions] = useState<any>();
+    const [types, setTypes] = useState<any>();
+
+    const getReions = () => {
         axios
-            .get("www.themealdb.com/api/json/v1/1/categories.php")
+            .get("https://pokeapi.co/api/v2/region")
             .then((res) => {
-                console.log('res', res);
-                
-                // setCategories(res);
+                setRegions(res.data.results)
+            });
+    }
+
+    const getTypes = () => {
+        axios
+            .get("https://pokeapi.co/api/v2/type")
+            .then((res) => {
+                setTypes(res.data.results)
             });
     }
 
     useEffect(() => {
-        getCategories();
+        getReions();
+        getTypes();
     }, []);
 
-    // console.log(categories);
+    console.log('regions', regions);
 
     return (
         <main>
             <div className="welcome">
-                <div className="welcome-content">
-                    <PiChefHat className="welcome-icon" />
+                <div className="welcome-content col-7">
+                    <CgPokemon className="welcome-icon" />
                     <span className="welcome-title">Bem vindo</span>
                     <span className="welcome-subtitle">
-                        Sinta-se à vontade para explorar as receitas disponiveis e experimenta-las você mesmo
+                        Sinta-se à vontade para explorar o potencial de <span className="title-name">Poke Search</span>, aqui você poderá ver toda info necessária sobre seu Pokemón favorito
                     </span>
                 </div>
 
-                <div className="welcome-carousel">
+                <div className="col-5">
                     <CarouselFood />
                 </div>
             </div>
 
-            <div className="search-category-list">
-                <div className="col-12 col-md-6 col-lg-3 px-2">
-                    <div className="search-category">
-                        <img className="category-img" src="/src/assets/images/teste1.jpg" alt="" />
-                        <div className="category-details">
-                            <h2>Comidas com carne</h2>
-                        </div>
-                    </div>
+            <div className="filter-buttons-container">
+                <h1>Regiões</h1>
+                <div className="filter-buttons">
+                    {
+                        regions ? regions.map((region: any) => (
+                            <div className="mx-4" key={region.name}>
+                                <div className="filter-button">
+                                    <h3>{region.name}</h3>
+                                </div>
+                            </div>
+                        )) : null
+                    }
                 </div>
+            </div>
 
-                <div className="col-12 col-md-6 col-lg-3 px-2">
-                    <div className="search-category">
-                        <img className="category-img" src="/src/assets/images/teste1.jpg" alt="" />
-                        <div className="category-details">
-                            <h2>Comidas com carne</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-3 px-2">
-                    <div className="search-category">
-                        <img className="category-img" src="/src/assets/images/teste1.jpg" alt="" />
-                        <div className="category-details">
-                            <h2>Comidas com carne</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-3 px-2">
-                    <div className="search-category">
-                        <img className="category-img" src="/src/assets/images/teste1.jpg" alt="" />
-                        <div className="category-details">
-                            <h2>Comidas com carne</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-3 px-2">
-                    <div className="search-category">
-                        <img className="category-img" src="/src/assets/images/teste1.jpg" alt="" />
-                        <div className="category-details">
-                            <h2>Comidas com carne</h2>
-                        </div>
-                    </div>
+            <div className="filter-buttons-container">
+                <h1>Tipos</h1>
+                <div className="filter-buttons">
+                    {
+                        types ? types.map((type: any) => (
+                            <div className="mx-4" key={type.name}>
+                                <div className="filter-button">
+                                    <h3>{type.name}</h3>
+                                </div>
+                            </div>
+                        )) : null
+                    }
                 </div>
             </div>
         </main>
