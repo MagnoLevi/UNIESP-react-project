@@ -54,12 +54,10 @@ const Home = () => {
                 <div className="filter-buttons">
                     {
                         regions ? regions.map((region: any) => (
-                            <div className="mx-4" key={region.name}>
-                                <div className="filter-button">
-                                    <h3>{region.name}</h3>
-                                </div>
-                            </div>
-                        )) : null
+                            <button className="btn-custom btn-primary-custom mx-4 my-2" key={region.name}>
+                                <h3>{region.name}</h3>
+                            </button>
+                        )) : <i className="spinner-border spinner-border-sm"></i>
                     }
                 </div>
             </div>
@@ -69,12 +67,10 @@ const Home = () => {
                 <div className="filter-buttons">
                     {
                         types ? types.map((type: any) => (
-                            <div className="mx-4" key={type.name}>
-                                <div className="filter-button">
-                                    <h3>{type.name}</h3>
-                                </div>
-                            </div>
-                        )) : null
+                            <button className="btn-custom btn-primary-custom mx-4 my-2" key={type.name}>
+                                <h3>{type.name}</h3>
+                            </button>
+                        )) : <i className="spinner-border spinner-border-sm"></i>
                     }
                 </div>
             </div>

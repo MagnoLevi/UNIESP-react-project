@@ -1,0 +1,11 @@
+.filter-container {
+    background-color: var(--white);
+    color: var(--black);
+    margin: 0 5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.filter-bars {
+    cursor: pointer;
+}

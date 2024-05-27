@@ -1,5 +1,4 @@
 .welcome-container {
-    margin-top: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -47,38 +46,4 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.filter-button {
-    background-color: var(--primary);
-    color: var(--white);
-    margin: 1.5rem 0;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.1s linear;
-}
-
-.filter-button:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation: grow-back 0.2s linear;
-}
-
-.filter-button h3 {
-    text-align: center;
-    margin: 0;
-}
-
-@keyframes grow-back {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-    }
-
-    100% {
-        transform: scale(1);
-    }
 }

@@ -39,6 +39,57 @@ body {
 }
 
 .title-name {
-    color: var(--primary-high-contrast);
-    
+    color: var(--primary-high-contrast);   
 }
+
+.btn-custom {
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem;
+    border: none;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.btn-custom h1, 
+.btn-custom h2,
+.btn-custom h3,
+.btn-custom h4,
+.btn-custom h5,
+.btn-custom h6 {
+    margin: 0;
+}
+
+.btn-custom:hover {
+    filter: brightness(0.9);
+    animation: btn-custom-hover 0.2s linear;
+}
+
+@keyframes btn-custom-hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-primary-custom {
+    background-color: var(--primary);
+    border: 0.15rem solid var(--primary);
+    color: var(--white);
+}
+
+.btn-outline-primary-custom {
+    background-color: var(--white);
+    border: 0.15rem solid var(--primary);
+    color: var(--primary);
+}
+
