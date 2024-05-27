@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.querySelector('#root')!).render(
       <Routes>
         <Route path='/' element={<Home />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>,
 )

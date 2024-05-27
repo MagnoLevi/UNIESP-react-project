@@ -2,10 +2,10 @@ import './style.css';
 
 const Footer = () => {
     return(
-        <div className="footer">
+        <footer>
             <h6>Magno Levi</h6>
             <h6>Sistemas para Internet - P4</h6>
-        </div>
+        </footer>
     )
 }
 

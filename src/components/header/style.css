@@ -3,19 +3,22 @@ header {
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    background-color: var(--primary);
+    background-color: var(--black);
     height: 5rem;
+    top: 0;
     padding: 0 20rem;
-    border-bottom: 0.1rem solid var(--primary-light);
+    z-index: 99;
+    box-shadow: 0 4px 8px 0 rgba(26, 26, 28, 0.2), 0 6px 26px 0 rgba(26, 26, 28, 0.19);
+    color: var(--white);
 }
 
 header .title {
     display: flex;
     align-items: center;
-    color: var(--black);
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: var(--white);
     transition: all 0.1s;
 }
 
@@ -31,7 +34,6 @@ header .title span {
 header .nav {
     display: flex;
     list-style-type: none;
-    color: var(--black);
 }
 
 header .nav .pipe {
