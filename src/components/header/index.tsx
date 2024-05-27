@@ -11,15 +11,29 @@ const Header = () => {
             </div>
 
             <ul className='nav'>
-                <Link to="/" className='nav-link'>
-                    Home
-                </Link>
-                
+                {
+                    window.location.pathname == "/"
+                        ? <Link to="/" className='nav-link nav-link-selected'>
+                            Home
+                        </Link>
+                        :
+                        <Link to="/" className='nav-link'>
+                            Home
+                        </Link>
+                }
+
                 <span className='pipe'>|</span>
 
-                <Link to="/" className='nav-link'>
-                    Pesquisa
-                </Link>
+                {
+                    window.location.pathname == "/list"
+                        ? <Link to="/list" className='nav-link nav-link-selected'>
+                            Lista
+                        </Link>
+                        :
+                        <Link to="/list" className='nav-link'>
+                            Lista
+                        </Link>
+                }
             </ul>
         </header>
     )

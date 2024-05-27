@@ -6,9 +6,11 @@ import axios from "axios";
 import { CgPokemon } from "react-icons/cg";
 
 const Home = () => {
+    // Variáveis
     const [regions, setRegions] = useState<any>();
     const [types, setTypes] = useState<any>();
 
+    // Funções
     const getReions = () => {
         axios
             .get("https://pokeapi.co/api/v2/region")
@@ -25,16 +27,15 @@ const Home = () => {
             });
     }
 
+    // Chama funções
     useEffect(() => {
         getReions();
         getTypes();
     }, []);
 
-    console.log('regions', regions);
-
     return (
         <main>
-            <div className="welcome">
+            <div className="welcome-container">
                 <div className="welcome-content col-7">
                     <CgPokemon className="welcome-icon" />
                     <span className="welcome-title">Bem vindo</span>

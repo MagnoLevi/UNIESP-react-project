@@ -46,6 +46,14 @@ header .nav .nav-link {
 
 header .nav .nav-link:hover {
     text-decoration: underline;
+    color: var(--primary);
     transform: scale(1.1);
-    padding: 0 1rem;
+    padding: 0 0.4rem;
+}
+
+header .nav .nav-link-selected {
+    text-decoration: underline;
+    color: var(--primary);
+    transform: scale(1.1);
+    padding: 0 0.4rem;
 }
