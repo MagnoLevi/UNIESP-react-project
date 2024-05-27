@@ -2,8 +2,28 @@ import "./style.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CarouselFood from "../../components/carousel_food/index";
 import { PiChefHat } from "react-icons/pi";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
+    const [categories, setCategories] = useState<any>();
+    const getCategories = () => {
+        // setCategories(`isso é um teste`);
+        axios
+            .get("www.themealdb.com/api/json/v1/1/categories.php")
+            .then((res) => {
+                console.log('res', res);
+                
+                // setCategories(res);
+            });
+    }
+
+    useEffect(() => {
+        getCategories();
+    }, []);
+
+    // console.log(categories);
+
     return (
         <main>
             <div className="welcome">
