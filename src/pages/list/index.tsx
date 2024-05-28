@@ -70,6 +70,32 @@ const List = () => {
         }
     };
 
+    const teste = async () => {
+        setLoading(true);
+
+        const nome = document.querySelector<HTMLInputElement>('#input_pokemon')?.value;
+        const id = document.querySelector<HTMLInputElement>('#input_id')?.value;
+        let response;
+
+        if (nome) {
+            response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + nome);
+        } else if(id) {
+            response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + id);
+        }
+        
+        if (response) {
+            const details = response.data;
+    
+            const arrayAbacaxi = [{
+                name: details.name,
+                id: details.id,
+                sprites: details.sprites,
+            }];
+    
+            setPokemonList(arrayAbacaxi);
+            setLoading(false);
+        }
+    };
 
     // Chama funções
     useEffect(() => {
@@ -95,16 +121,16 @@ const List = () => {
                     <div className="col d-flex align-items-center justify-content-end">
                         <div className="d-flex align-items-center me-2">
                             <label htmlFor="" className="text-nowrap me-1">Nº Pokedex:</label>
-                            <input className="form-control" type="text" placeholder="(Opcional)" />
+                            <input id="input_id" className="form-control" type="number" placeholder="(Opcional)" />
                         </div>
 
                         <div className="d-flex align-items-center me-2">
                             <label htmlFor="" className="text-nowrap me-1">Pokemon:</label>
-                            <input className="form-control" type="text" placeholder="(Opcional)" />
+                            <input id="input_pokemon" className="form-control" type="text" placeholder="(Opcional)" />
                         </div>
 
                         <div>
-                            <button className="btn-custom btn-primary-custom">
+                            <button className="btn-custom btn-primary-custom" onClick={teste}>
                                 <FaMagnifyingGlass />
                             </button>
                         </div>
