@@ -1,9 +1,8 @@
 import "./style.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CarouselFood from "../../components/carousel_food/index";
+import CarouselHome from "../../components/carousel_home/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CgPokemon } from "react-icons/cg";
 import { SiPokemon } from "react-icons/si";
 
 const Home = () => {
@@ -46,7 +45,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-5">
-                    <CarouselFood />
+                    <CarouselHome />
                 </div>
             </div>
 

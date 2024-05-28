@@ -1,0 +1,36 @@
+.carousel-home {
+    width: 100%;
+    transition: all 0.2s linear;
+}
+
+.carousel-item-home {
+    background-color: var(--black);
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.carousel-item-home .carousel-item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item-home .carousel-item-details {
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    padding: 1.2rem 0;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item-home .carousel-item-details h2 {
+    margin: 0;
+}
