@@ -1,47 +1,23 @@
 import "./style.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CarouselFood from "../../components/carousel_food/index";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import { CgPokemon } from "react-icons/cg";
+import { useLocation } from "react-router-dom";
 
 const Display = () => {
-    // Variáveis
-    const [regions, setRegions] = useState<any>();
-    const [types, setTypes] = useState<any>();
+    const location = useLocation();
 
-    // Funções
-    const getReions = () => {
-        axios
-            .get("https://pokeapi.co/api/v2/region")
-            .then((res) => {
-                setRegions(res.data.results)
-            });
+    // Função para parsear a query string
+    const useQuery = () => {
+        return new URLSearchParams(location.search);
     }
 
-    const getTypes = () => {
-        axios
-            .get("https://pokeapi.co/api/v2/type")
-            .then((res) => {
-                setTypes(res.data.results)
-            });
-    }
-
-    // Chama funções
-    useEffect(() => {
-        getReions();
-        getTypes();
-    }, []);
+    const query = useQuery();
+    const id = query.get('id');
 
     return (
         <main>
-            <div className="filter-container">
-                
-            </div>
-
-            <div className="list-container">
-                
-            </div>
+            <h1>Display Page</h1>
+            {id ? <p>ID: {id}</p> : <p>No ID provided</p>}
         </main>
     );
 }

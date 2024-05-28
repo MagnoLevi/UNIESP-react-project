@@ -5,6 +5,7 @@ import axios from "axios";
 import { FaBars } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import $ from "jquery";
+import { Link } from "react-router-dom";
 
 interface Pokemon {
     name: string;
@@ -142,19 +143,21 @@ const List = () => {
                     loading
                         ? <i className="spinner-border spinner-border-sm"></i>
                         : pokemonList.map((pokemon) => (
-                            <div className="col-12 col-md-6 col-lg-4 col-xl-2">
-                                <div className="pokemon-container" key={pokemon.id}>
-                                    <div className="pokemon-entry">
-                                        <h3>{pokemon.id}</h3>
-                                    </div>
+                            <div className="col-12 col-md-6 col-lg-4 col-xl-2" key={pokemon.id}>
+                                <Link to={{ pathname: "/display", search: `?id=${pokemon.id}` }} style={{ textDecoration: "none" }}>
+                                    <div className="pokemon-container">
+                                        <div className="pokemon-entry">
+                                            <h3>{pokemon.id}</h3>
+                                        </div>
 
-                                    <div className="pokemon-content">
-                                        <img className="pokemon-img" src={pokemon.sprites.front_default} alt={pokemon.name} />
-                                        <div className="pokemon-details">
-                                            <h4>{pokemon.name}</h4>
+                                        <div className="pokemon-content">
+                                            <img className="pokemon-img" src={pokemon.sprites.front_default} alt={pokemon.name} />
+                                            <div className="pokemon-details">
+                                                <h4>{pokemon.name}</h4>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         ))
                 }
