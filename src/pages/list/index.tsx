@@ -6,10 +6,26 @@ import { FaBars } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import $ from "jquery";
 
+interface Pokemon {
+    name: string;
+    url: string;
+}
+
+interface PokemonDetails {
+    name: string;
+    id: number;
+    sprites: {
+        front_default: string;
+    };
+}
+
 const List = () => {
     // Variáveis
     const [regions, setRegions] = useState<any>();
     const [types, setTypes] = useState<any>();
+    const [pokemonList, setPokemonList] = useState<PokemonDetails[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+
 
     // Funções
     const getReions = () => {
@@ -28,17 +44,47 @@ const List = () => {
             });
     }
 
-    // Função para alternar a visibilidade com animação jQuery
-    const toggleFilter = () => {
-        $("#container_add_filter").slideToggle();
+    const fetchPokemonList = async () => {
+        try {
+            const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=500');
+            const results = response.data.results as Pokemon[];
+
+            const detailedPokemonList = await Promise.all(
+                results.map(async (pokemon) => {
+                    const detailsResponse = await axios.get(pokemon.url);
+                    const details = detailsResponse.data;
+
+                    return {
+                        name: details.name,
+                        id: details.id,
+                        sprites: details.sprites,
+                    } as PokemonDetails;
+                })
+            );
+
+            setPokemonList(detailedPokemonList);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching Pokémon list:', error);
+        }
     };
+
 
     // Chama funções
     useEffect(() => {
         getReions();
         getTypes();
+        fetchPokemonList();
     }, []);
 
+
+    // Função para alternar a visibilidade com animação jQuery
+    const toggleFilter = () => {
+        $("#container_add_filter").slideToggle();
+    };
+
+
+    // Html
     return (
         <main>
             <div className="filter-container">
@@ -52,7 +98,7 @@ const List = () => {
                         </div>
 
                         <div className="d-flex align-items-center me-2">
-                            <label htmlFor="" className="text-nowrap me-1">Nome Pokemon:</label>
+                            <label htmlFor="" className="text-nowrap me-1">Pokemon:</label>
                             <input className="form-control" type="text" placeholder="(Opcional)" />
                         </div>
 
@@ -90,8 +136,28 @@ const List = () => {
                 </div>
             </div>
 
-            <div className="list-container">
+            <h6 className="list-pokemon-count">Resultados encontrados: {pokemonList.length}</h6>
+            <div className="list-pokemon-container">
+                {
+                    loading
+                        ? <i className="spinner-border spinner-border-sm"></i>
+                        : pokemonList.map((pokemon) => (
+                            <div className="col-12 col-md-6 col-lg-4 col-xl-2">
+                                <div className="pokemon-container" key={pokemon.id}>
+                                    <div className="pokemon-entry">
+                                        <h3>{pokemon.id}</h3>
+                                    </div>
 
+                                    <div className="pokemon-content">
+                                        <img className="pokemon-img" src={pokemon.sprites.front_default} alt={pokemon.name} />
+                                        <div className="pokemon-details">
+                                            <h4>{pokemon.name}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                }
             </div>
         </main>
     );

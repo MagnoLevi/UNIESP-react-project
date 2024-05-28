@@ -2,10 +2,67 @@
     background-color: var(--white);
     color: var(--black);
     margin: 0 5rem;
+    margin-bottom: 5rem;
     padding: 1rem;
     border-radius: 1rem;
 }
 
 .filter-bars {
     cursor: pointer;
+}
+
+.list-pokemon-count {
+    margin: 0.5rem 5.5rem;
+}
+.list-pokemon-container {
+    background-color: var(--white);
+    padding: 2rem;
+    margin: 0 5rem;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-container {
+    background-color: var(--gray-light);
+    margin: 1rem;
+    border-radius: 0.3rem;
+    position: relative;
+}
+
+.pokemon-entry {
+    background-color: var(--white);
+    width: fit-content;
+    padding: 1rem;
+    position: absolute;
+}
+
+.pokemon-entry h3 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.pokemon-content {
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-img {
+    width: 50%;
+}
+
+.pokemon-details {
+    background-color: var(--white);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pokemon-details h4 {
+    margin: 0;
+    color: var(--black);
 }

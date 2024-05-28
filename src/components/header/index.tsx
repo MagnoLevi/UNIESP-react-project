@@ -1,40 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './style.css';
-import { TiHome } from 'react-icons/ti';
+import { CgPokemon } from 'react-icons/cg';
 
 const Header = () => {
+    const location = useLocation();
+
     return (
         <header>
-            <div className='title'>
-                <TiHome />
-                <span>Poke Search</span>
+            <div className='col-8 header-content'>
+                <div className='header-title'>
+                    <CgPokemon />
+                    <span>Poke Search</span>
+                </div>
+                
+                <ul className='header-nav'>
+                    <Link to="/" className={`nav-link ${location.pathname === '/' ? 'nav-link-selected' : ''}`}>
+                        Home
+                    </Link>
+                
+                    <span className='pipe'>|</span>
+                
+                    <Link to="/list" className={`nav-link ${location.pathname === '/list' ? 'nav-link-selected' : ''}`}>
+                        Lista
+                    </Link>
+                </ul>
             </div>
-
-            <ul className='nav'>
-                {
-                    window.location.pathname == "/"
-                        ? <Link to="/" className='nav-link nav-link-selected'>
-                            Home
-                        </Link>
-                        :
-                        <Link to="/" className='nav-link'>
-                            Home
-                        </Link>
-                }
-
-                <span className='pipe'>|</span>
-
-                {
-                    window.location.pathname == "/list"
-                        ? <Link to="/list" className='nav-link nav-link-selected'>
-                            Lista
-                        </Link>
-                        :
-                        <Link to="/list" className='nav-link'>
-                            Lista
-                        </Link>
-                }
-            </ul>
         </header>
     )
 }

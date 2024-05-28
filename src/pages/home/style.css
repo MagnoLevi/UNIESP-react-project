@@ -16,8 +16,11 @@
 }
 
 .welcome-icon {
-    font-size: 7rem;
+    font-size: 5rem;
     color: var(--primary);
+    line-height: 5%;
+    display: flex;
+    transform: scale(4);
 }
 
 .welcome-title {

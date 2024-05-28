@@ -4,6 +4,7 @@ import CarouselFood from "../../components/carousel_food/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CgPokemon } from "react-icons/cg";
+import { SiPokemon } from "react-icons/si";
 
 const Home = () => {
     // Variáveis
@@ -37,7 +38,7 @@ const Home = () => {
         <main>
             <div className="welcome-container">
                 <div className="welcome-content col-7">
-                    <CgPokemon className="welcome-icon" />
+                    <SiPokemon className="welcome-icon" />
                     <span className="welcome-title">Bem vindo</span>
                     <span className="welcome-subtitle">
                         Sinta-se à vontade para explorar o potencial de <span className="title-name">Poke Search</span>, aqui você poderá ver toda info necessária sobre seu Pokemón favorito
