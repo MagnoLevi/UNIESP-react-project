@@ -47,7 +47,7 @@ const List = () => {
 
     const fetchPokemonList = async () => {
         try {
-            const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=500');
+            const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=300');
             const results = response.data.results as Pokemon[];
 
             const detailedPokemonList = await Promise.all(
@@ -84,6 +84,8 @@ const List = () => {
         }
         
         if (response) {
+            console.log('asdasd');
+            
             const details = response.data;
     
             const arrayAbacaxi = [{
@@ -94,6 +96,8 @@ const List = () => {
     
             setPokemonList(arrayAbacaxi);
             setLoading(false);
+        } else {
+            fetchPokemonList();
         }
     };
 
