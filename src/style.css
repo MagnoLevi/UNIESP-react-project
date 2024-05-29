@@ -93,3 +93,7 @@ body {
     color: var(--primary);
 }
 
+.progress-bar {
+    background-color: var(--primary) !important;
+}
+
