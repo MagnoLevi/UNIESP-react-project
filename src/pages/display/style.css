@@ -4,3 +4,18 @@
     padding: 1rem;
     border-radius: 1rem;
 }
+.display-pokemon-container .carousel-display {
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--gray);
+}
+
+.display-pokemon-container .pokemon-name {
+    color: var(--primary);
+    font-size: 4rem;
+    margin: 0;
+}
+
+.display-pokemon-container .pokemon-type {
+    font-size: 2rem;
+    margin: 0;
+}
