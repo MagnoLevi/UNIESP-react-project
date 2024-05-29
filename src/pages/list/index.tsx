@@ -70,7 +70,7 @@ const List = () => {
         }
     };
 
-    const buscarPokemon = async () => {
+    const fetchPokemonFilter = async () => {
         setLoading(true);
 
         const nome = document.querySelector<HTMLInputElement>('#input_pokemon')?.value;
@@ -134,7 +134,7 @@ const List = () => {
                         </div>
 
                         <div>
-                            <button className="btn-custom btn-primary-custom" onClick={buscarPokemon}>
+                            <button className="btn-custom btn-primary-custom" onClick={fetchPokemonFilter}>
                                 <FaMagnifyingGlass />
                             </button>
                         </div>
