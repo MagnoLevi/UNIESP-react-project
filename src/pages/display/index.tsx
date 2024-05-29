@@ -168,7 +168,7 @@ console.log(pokemon)
                                     </ul>
                                 </div>
 
-                                {/* Status */}
+                                {/* Stats */}
                                 <div className="mt-4">
                                     <h4>Stats</h4>
 
@@ -176,7 +176,7 @@ console.log(pokemon)
                                         <div className="mb-3" key={stat.stat.name}>
                                             <span className="ms-2">{stat.stat.name}</span>
                                             <div className="progress">
-                                                <div className="progress-bar" style={{ width: `${stat.base_stat}%` }} role="progressbar" aria-valuenow={12} aria-valuemin={0} aria-valuemax={100}>
+                                                <div className="progress-bar" style={{ width: `${stat.base_stat}%` }} role="progressbar" aria-valuenow={12} aria-valuemin={0} aria-valuemax={255}>
                                                     {stat.base_stat}%
                                                 </div>
                                             </div>
